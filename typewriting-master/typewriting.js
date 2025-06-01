@@ -1,42 +1,42 @@
-class TypeWriter {
-  constructor(element) {
-    this.element = element;
-    this.words = JSON.parse(element.getAttribute('data-words')) || [];
-    this.speed = parseInt(element.getAttribute('data-speed'), 10) || 100;
-    this.delay = parseInt(element.getAttribute('data-delay'), 10) || 1000;
-    this.loop = element.getAttribute('data-loop') === 'yes';
-    this.currentText = '';
-    this.wordIndex = 0;
-    this.isDeleting = false;
-    this.type();
+class TextTyper {
+  constructor(target) {
+    this.target = target;
+    this.wordList = JSON.parse(target.getAttribute('data-words')) || [];
+    this.typingSpeed = Number(target.getAttribute('data-speed')) || 100;
+    this.pauseDelay = Number(target.getAttribute('data-delay')) || 1000;
+    this.shouldLoop = target.getAttribute('data-loop') === 'yes';
+    this.displayed = '';
+    this.index = 0;
+    this.deleting = false;
+    this.animate();
   }
 
-  type() {
-    const currentWord = this.words[this.loop ? this.wordIndex % this.words.length : this.wordIndex] || '';
-    let typeSpeed = this.speed;
+  animate() {
+    const word = this.wordList[this.shouldLoop ? this.index % this.wordList.length : this.index] || '';
+    let interval = this.typingSpeed;
 
-    if (this.isDeleting) {
-      this.currentText = currentWord.substring(0, this.currentText.length - 1);
-      typeSpeed /= 2;
+    if (this.deleting) {
+      this.displayed = word.slice(0, this.displayed.length - 1);
+      interval = Math.floor(this.typingSpeed / 2);
     } else {
-      this.currentText = currentWord.substring(0, this.currentText.length + 1);
+      this.displayed = word.slice(0, this.displayed.length + 1);
     }
 
-    this.element.innerHTML = `<span class="write">${this.currentText}</span><span class="blinking-cursor">|</span>`;
+    this.target.innerHTML = `<span class="write">${this.displayed}</span><span class="blinking-cursor">|</span>`;
 
-    if (!this.isDeleting && this.currentText === currentWord) {
-      if (!this.loop && this.wordIndex >= this.words.length - 1) return;
-      this.isDeleting = true;
-      typeSpeed = this.delay;
-    } else if (this.isDeleting && this.currentText === '') {
-      this.isDeleting = false;
-      this.wordIndex++;
+    if (!this.deleting && this.displayed === word) {
+      if (!this.shouldLoop && this.index >= this.wordList.length - 1) return;
+      this.deleting = true;
+      interval = this.pauseDelay;
+    } else if (this.deleting && this.displayed === '') {
+      this.deleting = false;
+      this.index++;
     }
 
-    setTimeout(() => this.type(), typeSpeed);
+    setTimeout(() => this.animate(), interval);
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.typewrite').forEach(el => new TypeWriter(el));
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.typewrite').forEach(node => new TextTyper(node));
 });

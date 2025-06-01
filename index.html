@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm a Photographer</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href = "css/style.css">
+    <script src = "typewriting-master/typewriting.js"></script>
+</head>
+<body>
+<!-- 
+    each section has an id and some classe for padding and screen view
+    each section has a container class for the content
+    each container has section-container div 
+    for example header-content, about-content, work-content, portfolio-content, contact-content, insta-content
+    each section has a title class for the title of the section
+    and there is one button for down arrow which is used to 
+    scroll down to the next section
+-->
+
+<!-- utility classes -->
+ <!-- 
+        full-screen: for full screen view
+        flex: for flex view
+        py-7: for padding top and bottom
+        grid: for grid view
+        lead: for lead paragraph
+        btn-down: for down arrow button
+        btn-down-white: for white down arrow button
+        btn-submit: for submit button
+        form-control: for form control
+        social-links: for social links
+        title: for title of the section
+ -->
+    
+    <!-- header -->
+     <!-- it consist of a photogprah and an animating typewriter effec which I used github librar of the user -->
+    <header id = "header" class = "full-screen flex">
+        <div class = "container">
+            <div class = "header-content">
+                <h1>I'm a </br><span class="typewrite" data-loop="yes" data-speed="100" data-delay="1000" data-words='["Photographer", "Traveller", "Advanturer"]'></span></h1>
+                <h3>Himey patel</h3>
+
+                <ul class = "social-links">
+                    <li>
+                        <a href = "#" class = "flex">
+                            <i class = "fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "#" class = "flex">
+                            <i class = "fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "#" class = "flex">
+                            <i class = "fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "#" class = "flex">
+                            <i class = "fab fa-pinterest"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- main content -->
+    <main>
+        <!-- about section -->
+        <section id = "about" class = "about py-7">
+            <div class = "container">
+                <div class = "about-content grid">
+                    <div class = "about-left">
+                        <img src = "images/" alt = "">
+                    </div>
+                    <div class = "about-right">
+                        <div class = "title">
+                            <h2>About Me</h2>
+                        </div>
+                        <p class = "lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae odio delectus alias consectetur assumenda. Repellat nihil quasi nemo mollitia laudantium labore amet sint laboriosam cumque alias neque, reiciendis reprehenderit quos odio voluptatum et tempore. Quos provident fugiat veritatis ad minima necessitatibus quisquam ipsa animi, dolore quaerat? Assumenda perferendis non deleniti.</p>
+                        <p class = "lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex deleniti dolorem ad. Deserunt illo distinctio voluptates, optio totam quod repudiandae commodi suscipit, odit minus inventore voluptas accusantium unde eum corrupti!</p>
+                        <a href = "#work" class = "btn-down">
+                            <i class = "fas fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of about section -->
+
+        <!-- work section -->
+        <section id = "work" class = "full-screen flex py-7">
+            <div class = "container">
+                <div class = "work-content">
+                    <div class = "title">
+                        <h2>what am i doing?</h2>
+                    </div>
+                    <ul class = "work-top grid">
+                        <li class = "lead"><i class = "fas fa-dot-circle"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore labore illum recusandae minima expedita qui voluptatibus ratione molestiae totam a..</li>
+                        <li class = "lead"><i class = "fas fa-dot-circle"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sed itaque unde cumque quasi aspernatur veritatis provident necessitatibus inventore amet?</li>
+                        <li class = "lead"><i class = "fas fa-dot-circle"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, in. Inventore velit praesentium quisquam officiis aliquid, repudiandae quibusdam repellendus placeat.</li>
+                        <li class = "lead"><i class = "fas fa-dot-circle"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum suscipit sit incidunt rem voluptatibus non illo corrupti magnam ut laborum.</li>
+                    </ul>
+
+                    <div class = "work-bottom grid">
+                        <div>
+                            <span class = "icon"><img src = "images/wildlife-icon.png"></span>
+                            <h3>Wildlife</h3>
+                        </div>
+                        <div>
+                            <span class = "icon"><img src = "images/portrait-icon.png"></span>
+                            <h3>Portrait</h3>
+                        </div>
+                        <div>
+                            <span class = "icon"><img src = "images/landscape-icon.png"></span>
+                            <h3>Landscape</h3>
+                        </div>
+                        <div>
+                            <span class = "icon"><img src = "images/family-icon.png"></span>
+                            <h3>Family</h3>
+                        </div>
+                    </div>
+                    <a href = "#portfolio" class = "btn-down btn-down-white">
+                        <i class = "fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- end of work section -->
+
+        <!-- portfolio section
+         it consist of the paragraph and a fullscreen image and -->
+
+        <section id = "portfolio" class = "full-screen py-7">
+            <div class = "container">
+                <div class = "portfolio-content">
+                    <div class = "title">
+                        <h2>my last works</h2>
+                        <a href = "#contact" class = "btn-down">
+                            <i class = "fas fa-chevron-down"></i>
+                        </a>
+                    </div>
+
+                    <div class = "portfolio-grid grid">
+                        <div><img src = "images/pic-1.jpg"></div>
+                        <div><img src = "images/pic-2.jpg"></div>
+                        <div><img src = "images/pic-3.jpg"></div>
+                        <div><img src = "images/pic-4.jpg"></div>
+                        <div><img src = "images/pic-5.jpg"></div>
+                        <div><img src = "images/pic-6.jpg"></div>
+                        <div><img src = "images/pic-7.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of portfolio section -->
+
+        <!-- contact section -->
+        <section id = "contact" class = "py-7">
+            <div class = "container">
+                <div class = "contact-content flex">
+                    <div class = "contact-left">
+                        <div class="title">
+                            <h2>contact with me</h2>
+                        </div>
+                        <p class = "lead"><i class = "fas fa-phone-alt"></i> 04347475</p>
+                        <p class = "lead"><i class = "fas fa-envelope"></i> contact@gmail.com</p>
+                        <form action="">
+                            <input type = "text" class = "form-control" placeholder="Your name here ...">
+                            <input type = "email" class = "form-control" placeholder="Your email here">
+                            <input type = "submit" class = "btn-submit btn" value = "Submit">
+                        </form>
+                    </div>
+
+                    <div class = "contact-right">
+                        <img src = "images/contact-pic.jpg" alt = "contact image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of contact section -->
+
+        <!-- instagram section -->
+        <section id = "insta" class = "py-7">
+            <div class = "container">
+                <div class = "insta-content">
+                    <div class = "title">
+                        <h2>instagram</h2>
+                        <a href = "#footer" class = "btn-down btn-down-white">
+                            <i class = "fas fa-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class = "insta-grid grid">
+                        <div><img src = "images/insta-1.jpg"></div>
+                        <div><img src = "images/insta-2.jpg"></div>
+                        <div><img src = "images/insta-3.jpg"></div>
+                        <div><img src = "images/insta-4.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of instagram section -->
+    </main>
+    <!-- end of main content -->
+
+    <!-- footer -->
+    <footer id = "footer" class = "py-7">
+        <div class = "container">
+            <div class = "footer-content">
+                <div>
+                    <h3>Ka Patel Himey Atulkumar</h3>
+                    <div><img src = "images/about-pic.jpg"></div>
+                </div>
+
+                <div>
+                    <h3>Links</h3>
+                    <ul class = "flex">
+                        <li><a href = "#">About Me</a></li>
+                        <li><a href = "#">Work</a></li>
+                        <li><a href = "#">Portfolio</a></li>
+                        <li><a href = "#">Contact Me</a></li>
+                        <li><a href = "#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer -->
+
+
+    <!--
+    
+        typewriting js is just a typing libraray I have to downlaod it in and just use it as per direction in the read me section
+
+        This is the read me section of the typewriting. js
+            link:-https://github.com/awran5/typewriting/blob/master/README.md
+        Create an empty span tag with class name typewrite. You're able to pass the options using the custom HTML5 attributes:
+        data-loop: Stop the typing loop. Value shoud be yes or no
+        data-speed: Typing speed in millisecond. Default value is 100
+        data-delay: Time delay after word is complete in millisecond. Default value is 1000
+        data-words: Words to add separated by comma i.e. ["...","...","..."]
+    
+        <h3>Hey, I'm
+            <span class="typewrite" data-loop="yes" data-speed="100" data-delay="1000" data-words='["word 1", "word 2", "word 3"]'></span>
+        </h3>
+
+    -->
+    <script src = "typewriting-master/typewriting.js"></script>
+</body>
+</html>
